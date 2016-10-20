@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datapath
-Tue Oct 18 15:07:53 2016
+Thu Oct 20 16:16:48 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Oct 18 15:07:53 2016           ;
+; Analysis & Synthesis Status ; Failed - Thu Oct 20 16:16:48 2016           ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; datapath                                    ;
 ; Top-level Entity Name       ; datapath                                    ;
@@ -57,7 +57,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CGXFC7C6F23C7     ;                    ;
 ; Top-level entity name                                                           ; datapath           ; datapath           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
