@@ -28,13 +28,13 @@ begin
 	process
 	
 		file inputs: text open read_mode is "priority_encoder_text.txt";
-		file outputs: text open write_mode is "reg_file_vectors.out";
+		file outputs: text open write_mode is "priority_encoder_vectors.out";
 		variable file_line: line;
 		variable out_line: line;
 		variable line_num: integer := 0;
-		variable a_read: bit_vector(8 downto 0) := (others => '0');
-		variable o_read: bit_vector(2 downto 0) := (others => '0');
-		variable a1_read: bit_vector(8 downto 0) := (others => '0');
+		variable a_read: bit_vector(8 downto 0);
+		variable o_read: bit_vector(2 downto 0);
+		variable a1_read: bit_vector(8 downto 0);
 		variable sig_read: bit;
 
 	begin
@@ -94,4 +94,5 @@ begin
 	end process;
 	
 	module_priority_encoder: priority_encoder port map(a, o, a1, sig);
+	
 end basic;

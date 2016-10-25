@@ -18,12 +18,14 @@ begin
 	
 	a1(8) <= '0';
 
-	process
+	process(a)
 	
 	variable a1_temp: std_logic_vector(8 downto 0);
 	
 	begin
 	
+		a1_temp := a;
+		
 		if(a(0) = '1') then
 			o <= "000";
 			a1_temp(0) := '0';
