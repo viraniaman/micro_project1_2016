@@ -1,0 +1,21 @@
+$date
+  Tue Oct 25 16:49:21 2016
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$var reg 6 ! a[5:0] $end
+$var reg 16 " b[15:0] $end
+$scope module sign_extender_module $end
+$var reg 6 # a[5:0] $end
+$var reg 16 $ b[15:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+b111000 !
+b1111111111111000 "
+b111000 #
+b1111111111111000 $
