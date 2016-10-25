@@ -24,27 +24,23 @@ signal registers: register_array;
 
 begin
 
+	D1 <= D3 when (A1 = A3) else 
+			registers(to_integer(unsigned(A1)));
+	D2 <= D3 when (A2 = A3) else 
+			registers(to_integer(unsigned(A2)));
+	
+	
+
 	process(clk)
 		
 	begin
 		
 		if(rising_edge(clk)) then
-		
-			D1 <= registers(to_integer(unsigned(A1)));
-			D2 <= registers(to_integer(unsigned(A2)));
 			
 			if(reg_write = '1') then
 			
 				registers(to_integer(unsigned(A3))) <= D3;
 				
-				if(A1 = A3) then
-					D1 <= D3;
-				end if;
-				
-				if(A2 = A3) then
-					D2 <= D3;
-				end if;
-			
 			end if;
 	
 		end if;
