@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datapath
-Thu Oct 20 16:16:48 2016
+Sun Oct 23 14:02:10 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Oct 20 16:16:48 2016           ;
+; Analysis & Synthesis Status ; Failed - Sun Oct 23 14:02:10 2016           ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; datapath                                    ;
 ; Top-level Entity Name       ; datapath                                    ;

@@ -31,11 +31,11 @@ port(mem_address: in std_logic_vector(15 downto 0);
 	  );
 end component;
 
-signal mem_address: std_logic_vector(15 downto 0);
-signal mem_data: std_logic_vector(15 downto 0);
+signal mem_address: std_logic_vector(15 downto 0) := (others => '0');
+signal mem_data: std_logic_vector(15 downto 0) := (others => '0');
 signal rw: std_logic;
 signal clk: std_logic := '0';
-signal mem_out: std_logic_vector(15 downto 0);
+signal mem_out: std_logic_vector(15 downto 0) := (others => '0');
 
 --function to_string (arg : std_logic_vector) return string is
 --      variable result : string (1 to arg'length);
@@ -77,78 +77,78 @@ begin
 		variable file_line: line;
 		variable out_line: line;
 		variable line_num: integer := 0;
-		variable mem_address1, mem_data1, mem_out1: bit_vector(15 downto 0);
+		variable mem_address1: bit_vector(15 downto 0) := (others => '0');
+		variable mem_data1: bit_vector(15 downto 0) := (others => '0');
+		variable mem_out1: bit_vector(15 downto 0) := (others => '0');
 		variable temp_read: bit_vector(15 downto 0);
-		variable rw1: bit;
 
 	begin
 	
 		while not endfile(inputs) loop
+			
+			rw <= '1';
 		
 			wait until clk='1';
 		
 			readline(inputs, file_line);
-			read(file_line, rw1);
 			
-			rw <= to_stdulogic(rw1);
+--			if(rw1 = '0') then
+--			
+--				read(file_line, mem_address1);
+--				read(file_line, mem_out1);
+--			
+--				mem_address <= to_stdlogicvector(mem_address1);
+--				
+--				wait for 1 ns;
+--				
+--				if(mem_out /= to_stdlogicvector(mem_out1)) then
+--					write(out_line, string'("found error at line "));
+--					write(out_line, integer'image(line_num));
+--					write(out_line, string'(" expected output "));
+--					write(out_line, (mem_out1));
+--					write(out_line, string'(" found output "));
+--					write(out_line, to_bitvector(mem_out));
+--					writeline(outputs, out_line);
+--				
+--				else 
+--					write(out_line, string'("run successfully at line "));
+--					write(out_line, integer'image(line_num));
+--					writeline(outputs, out_line);
+--					
+--				end if;
+--			
+--			else
 			
-			if(rw1 = '0') then
+			read(file_line, mem_address1);
+			read(file_line, mem_data1);
 			
-				read(file_line, mem_address1);
-				read(file_line, mem_out1);
+			mem_address <= to_stdlogicvector(mem_address1);
+			mem_data <= to_stdlogicvector(mem_data1);
 			
-				mem_address <= to_stdlogicvector(mem_address1);
-				
-				wait for 1 ns;
-				
-				if(mem_out /= to_stdlogicvector(mem_out1)) then
-					write(out_line, string'("found error at line "));
-					write(out_line, integer'image(line_num));
-					write(out_line, string'(" expected output "));
-					write(out_line, (mem_out1));
-					write(out_line, string'(" found output "));
-					write(out_line, to_bitvector(mem_out));
-					writeline(outputs, out_line);
-				
-				else 
-					write(out_line, string'("run successfully at line "));
-					write(out_line, integer'image(line_num));
-					writeline(outputs, out_line);
-					
-				end if;
+			wait for 1 ns;
 			
-			else
+			rw <= '0';
+			mem_address <= to_stdlogicvector(mem_address1);
 			
-				read(file_line, mem_address1);
-				read(file_line, mem_data1);
-				
-				mem_address <= to_stdlogicvector(mem_address1);
-				mem_data <= to_stdlogicvector(mem_data1);
-				
-				wait for 1 ns;
-				
-				rw <= '0';
-				mem_address <= to_stdlogicvector(mem_address1);
-				
-				wait for 1 ns;
-				
-				if(mem_out /= to_stdlogicvector(mem_data1)) then
-					write(out_line, string'("found error at line "));
-					write(out_line, integer'image(line_num));
-					write(out_line, string'(" expected output "));
-					write(out_line, (mem_data1));
-					write(out_line, string'(" found output "));
-					write(out_line, to_bitvector(mem_out));
-					writeline(outputs, out_line);
-				
-				else 
-					write(out_line, string'("run successfully at line "));
-					write(out_line, integer'image(line_num));
-					writeline(outputs, out_line);
-					
-				end if;
+			wait until clk = '1';
 			
-			end if;		
+			if(mem_out /= to_stdlogicvector(mem_data1)) then
+				write(out_line, string'("found error at line "));
+				write(out_line, integer'image(line_num));
+				write(out_line, string'(" expected output "));
+				write(out_line, (mem_data1));
+				write(out_line, string'(" found output "));
+				write(out_line, to_bitvector(mem_out));
+				writeline(outputs, out_line);
+			
+			else 
+				write(out_line, string'("run successfully at line "));
+				write(out_line, integer'image(line_num));
+				writeline(outputs, out_line);
+				
+			end if;
+			
+--			end if;		
 				
 			line_num := line_num + 1;
 		

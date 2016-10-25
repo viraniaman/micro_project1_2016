@@ -1,28 +1,34 @@
 v 3
-file . "memory_testbench.vhd" "20161020141614.000" "20161020194802.003":
-  entity memory_testbench at 1( 0) + 0 on 351;
-  architecture basic of memory_testbench at 11( 198) + 0 on 352;
+file . "priority_encoder_testbench.vhd" "20161025073859.000" "20161025130903.720":
+  entity priority_encoder_testbench at 1( 0) + 0 on 837;
+  architecture basic of priority_encoder_testbench at 11( 208) + 0 on 838;
+file . "alu_testbench.vhd" "20161020130110.000" "20161025130903.462":
+  entity alu_testbench at 1( 0) + 0 on 827;
+  architecture basic of alu_testbench at 11( 195) + 0 on 828;
+file . "register_file.vhd" "20161023083151.000" "20161025130903.958":
+  entity register_file at 1( 0) + 0 on 845;
+  architecture basic of register_file at 19( 442) + 0 on 846;
+file . "priority_encoder.vhd" "20161025073416.000" "20161025130903.793":
+  entity priority_encoder at 1( 0) + 0 on 839;
+  architecture basic of priority_encoder at 15( 293) + 0 on 840;
+file . "datapath.vhd" "20161023083051.000" "20161025130903.581":
+  entity datapath at 1( 0) + 0 on 831;
+  architecture basic of datapath at 10( 138) + 0 on 832;
+file . "alu.vhd" "20161020131715.000" "20161025130903.526":
+  entity alu at 1( 0) + 0 on 829;
+  architecture basic of alu at 14( 288) + 0 on 830;
+file . "memory.vhd" "20161025062508.000" "20161025130903.673":
+  entity memory at 1( 0) + 0 on 835;
+  architecture basic of memory at 18( 352) + 0 on 836;
+file . "register16.vhd" "20161023083145.000" "20161025130903.840":
+  entity register16 at 1( 0) + 0 on 841;
+  architecture basic of register16 at 14( 241) + 0 on 842;
 file . "Testbench_main.vhd" "20160219084744.000" "20161020181330.645":
   entity testbench_main at 1( 0) + 0 on 293;
   architecture behave of testbench_main at 8( 114) + 0 on 294;
-file . "register16.vhd" "20161016123956.000" "20161020194802.190":
-  entity register16 at 1( 0) + 0 on 357;
-  architecture basic of register16 at 14( 239) + 0 on 358;
-file . "memory.vhd" "20161016074346.000" "20161020194802.085":
-  entity memory at 1( 0) + 0 on 353;
-  architecture basic of memory at 18( 350) + 0 on 354;
-file . "alu.vhd" "20161020131715.000" "20161020194801.919":
-  entity alu at 1( 0) + 0 on 347;
-  architecture basic of alu at 14( 288) + 0 on 348;
-file . "datapath.vhd" "20161016072223.000" "20161020194801.976":
-  entity datapath at 1( 0) + 0 on 349;
-  architecture basic of datapath at 10( 136) + 0 on 350;
-file . "priority_encoder.vhd" "20161018094149.000" "20161020194802.134":
-  entity priority_encoder at 1( 0) + 0 on 355;
-  architecture basic of priority_encoder at 15( 290) + 0 on 356;
-file . "register_file.vhd" "20161016072329.000" "20161020194802.225":
-  entity register_file at 1( 0) + 0 on 359;
-  architecture basic of register_file at 19( 440) + 0 on 360;
-file . "alu_testbench.vhd" "20161020130110.000" "20161020194801.856":
-  entity alu_testbench at 1( 0) + 0 on 345;
-  architecture basic of alu_testbench at 11( 195) + 0 on 346;
+file . "memory_testbench.vhd" "20161025062359.000" "20161025130903.608":
+  entity memory_testbench at 1( 0) + 0 on 833;
+  architecture basic of memory_testbench at 11( 198) + 0 on 834;
+file . "register_file_testbench.vhd" "20161025070401.000" "20161025130903.873":
+  entity register_file_testbench at 1( 0) + 0 on 843;
+  architecture basic of register_file_testbench at 11( 205) + 0 on 844;
