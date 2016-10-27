@@ -15,12 +15,12 @@ architecture basic of register16 is
 
 begin
 
-	process(clk, w)
+	process(clk)
 	
 	begin
 	
 		if(rising_edge(clk)) then
-			if(w = '0') then
+			if(w = '1') then
 				Q <= D;
 			end if;
 		end if;
