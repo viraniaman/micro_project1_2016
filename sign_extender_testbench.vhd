@@ -12,7 +12,9 @@ architecture basic of sign_extender_testbench is
 
 component sign_extender is
 
-port(a: in std_logic_vector(5 downto 0);
+generic(n: integer);
+
+port(a: in std_logic_vector(n-1 downto 0);
 	  b: out std_logic_vector(15 downto 0));
 end component;
 
@@ -41,6 +43,8 @@ begin
 			
 			a <= to_stdlogicvector(a_temp);
 			
+			wait for 1 ns;
+			
 			if(b /= to_stdlogicvector(b_temp)) then
 				write(out_line, string'("found error at line "));
 				write(out_line, integer'image(line_num));
@@ -65,6 +69,6 @@ begin
 	
 	end process;
 	
-	sign_extender_module: sign_extender port map(a, b);
+	sign_extender_module: sign_extender generic map(6) port map(a, b);
 	
 end basic;

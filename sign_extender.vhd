@@ -4,9 +4,9 @@ use ieee.numeric_std.all;
 
 entity sign_extender is
 
--- generic(n: integer);
+generic(n: integer);
 
-port(a: in std_logic_vector(5 downto 0);
+port(a: in std_logic_vector(n-1 downto 0);
 	  b: out std_logic_vector(15 downto 0));
 
 end entity sign_extender;
@@ -14,10 +14,8 @@ end entity sign_extender;
 architecture basic of sign_extender is
 
 begin
-	
-	b(5 downto 0) <= a;
-	
-	b(15 downto 6) <= ("1111111111") when (a(5) = '1') else
-							("0000000000");
+
+	b(15 downto n) <= (others => a(n-1));
+	b(n-1 downto 0) <= a;
 
 end basic;

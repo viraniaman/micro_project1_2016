@@ -1,40 +1,40 @@
 v 3
-file . "sign_extender.vhd" "20161025111912.000" "20161025164918.714":
-  entity sign_extender at 1( 0) + 0 on 1401;
-  architecture basic of sign_extender at 14( 231) + 0 on 1402;
-file . "priority_encoder_testbench.vhd" "20161025094724.000" "20161025164918.356":
-  entity priority_encoder_testbench at 1( 0) + 0 on 1389;
-  architecture basic of priority_encoder_testbench at 11( 208) + 0 on 1390;
-file . "alu_testbench.vhd" "20161020130110.000" "20161025164918.069":
-  entity alu_testbench at 1( 0) + 0 on 1379;
-  architecture basic of alu_testbench at 11( 195) + 0 on 1380;
-file . "register_file.vhd" "20161025100700.000" "20161025164918.596":
-  entity register_file at 1( 0) + 0 on 1397;
-  architecture basic of register_file at 19( 442) + 0 on 1398;
-file . "priority_encoder.vhd" "20161025095328.000" "20161025164918.429":
-  entity priority_encoder at 1( 0) + 0 on 1391;
-  architecture basic of priority_encoder at 15( 293) + 0 on 1392;
-file . "datapath.vhd" "20161023083051.000" "20161025164918.197":
-  entity datapath at 1( 0) + 0 on 1383;
-  architecture basic of datapath at 10( 138) + 0 on 1384;
-file . "alu.vhd" "20161020131715.000" "20161025164918.143":
-  entity alu at 1( 0) + 0 on 1381;
-  architecture basic of alu at 14( 288) + 0 on 1382;
-file . "memory.vhd" "20161025105526.000" "20161025164918.291":
-  entity memory at 1( 0) + 0 on 1387;
-  architecture basic of memory at 18( 352) + 0 on 1388;
-file . "register16.vhd" "20161023083145.000" "20161025164918.477":
-  entity register16 at 1( 0) + 0 on 1393;
-  architecture basic of register16 at 14( 241) + 0 on 1394;
+file . "sign_extender.vhd" "20161028094442.000" "20161028152017.825":
+  entity sign_extender at 1( 0) + 0 on 1497;
+  architecture basic of sign_extender at 14( 230) + 0 on 1498;
+file . "priority_encoder_testbench.vhd" "20161025094724.000" "20161028152017.468":
+  entity priority_encoder_testbench at 1( 0) + 0 on 1485;
+  architecture basic of priority_encoder_testbench at 11( 208) + 0 on 1486;
+file . "alu_testbench.vhd" "20161020130110.000" "20161028152017.183":
+  entity alu_testbench at 1( 0) + 0 on 1475;
+  architecture basic of alu_testbench at 11( 195) + 0 on 1476;
+file . "register_file.vhd" "20161025100700.000" "20161028152017.705":
+  entity register_file at 1( 0) + 0 on 1493;
+  architecture basic of register_file at 19( 442) + 0 on 1494;
+file . "priority_encoder.vhd" "20161025095328.000" "20161028152017.541":
+  entity priority_encoder at 1( 0) + 0 on 1487;
+  architecture basic of priority_encoder at 15( 293) + 0 on 1488;
+file . "datapath.vhd" "20161023083051.000" "20161028152017.301":
+  entity datapath at 1( 0) + 0 on 1479;
+  architecture basic of datapath at 10( 138) + 0 on 1480;
+file . "alu.vhd" "20161020131715.000" "20161028152017.247":
+  entity alu at 1( 0) + 0 on 1477;
+  architecture basic of alu at 14( 288) + 0 on 1478;
+file . "memory.vhd" "20161025105526.000" "20161028152017.402":
+  entity memory at 1( 0) + 0 on 1483;
+  architecture basic of memory at 18( 352) + 0 on 1484;
+file . "register16.vhd" "20161023083145.000" "20161028152017.588":
+  entity register16 at 1( 0) + 0 on 1489;
+  architecture basic of register16 at 14( 241) + 0 on 1490;
 file . "Testbench_main.vhd" "20160219084744.000" "20161020181330.645":
   entity testbench_main at 1( 0) + 0 on 293;
   architecture behave of testbench_main at 8( 114) + 0 on 294;
-file . "memory_testbench.vhd" "20161025103552.000" "20161025164918.224":
-  entity memory_testbench at 1( 0) + 0 on 1385;
-  architecture basic of memory_testbench at 11( 198) + 0 on 1386;
-file . "register_file_testbench.vhd" "20161025070401.000" "20161025164918.511":
-  entity register_file_testbench at 1( 0) + 0 on 1395;
-  architecture basic of register_file_testbench at 11( 205) + 0 on 1396;
-file . "sign_extender_testbench.vhd" "20161025111757.000" "20161025164918.661":
-  entity sign_extender_testbench at 1( 0) + 0 on 1399;
-  architecture basic of sign_extender_testbench at 11( 205) + 0 on 1400;
+file . "memory_testbench.vhd" "20161025103552.000" "20161028152017.328":
+  entity memory_testbench at 1( 0) + 0 on 1481;
+  architecture basic of memory_testbench at 11( 198) + 0 on 1482;
+file . "register_file_testbench.vhd" "20161025070401.000" "20161028152017.622":
+  entity register_file_testbench at 1( 0) + 0 on 1491;
+  architecture basic of register_file_testbench at 11( 205) + 0 on 1492;
+file . "sign_extender_testbench.vhd" "20161028095013.000" "20161028152017.771":
+  entity sign_extender_testbench at 1( 0) + 0 on 1495;
+  architecture basic of sign_extender_testbench at 11( 205) + 0 on 1496;
