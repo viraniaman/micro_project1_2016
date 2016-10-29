@@ -75,3 +75,7 @@ set_global_assignment -name VHDL_FILE register_file_testbench.vhd
 set_global_assignment -name VHDL_FILE priority_encoder_testbench.vhd
 set_global_assignment -name VHDL_FILE sign_extender.vhd
 set_global_assignment -name VHDL_FILE sign_extender_testbench.vhd
+set_global_assignment -name VHDL_FILE mux2.vhd
+set_global_assignment -name VHDL_FILE mux4.vhd
+set_global_assignment -name VHDL_FILE mux8.vhd
+set_global_assignment -name QIP_FILE memory.qip

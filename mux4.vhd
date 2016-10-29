@@ -5,15 +5,19 @@ use ieee.numeric_std.all;
 
 entity mux4 is 
 
+generic(
+	n: integer
+	);
+
 port(
 	sel: in std_logic_vector(1 downto 0);
-	inp1, inp2, inp3, inp4: in std_logic_vector(15 downto 0);
-	output: out std_logic_vector(15 downto 0);
+	inp1, inp2, inp3, inp4: in std_logic_vector(n-1 downto 0);
+	output: out std_logic_vector(n-1 downto 0)
 	);
 	
 end entity;
 
-architecture basic of mux2 is 
+architecture basic of mux4 is 
 
 begin
 

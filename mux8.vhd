@@ -5,15 +5,19 @@ use ieee.numeric_std.all;
 
 entity mux8 is 
 
+generic(
+	n: integer
+	);
+
 port(
-	sel: in std_logic_vector(1 downto 0);
-	inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8: in std_logic_vector(15 downto 0);
-	output: out std_logic_vector(15 downto 0);
+	sel: in std_logic_vector(2 downto 0);
+	inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8: in std_logic_vector(n-1 downto 0);
+	output: out std_logic_vector(n-1 downto 0)
 	);
 	
 end entity;
 
-architecture basic of mux2 is 
+architecture basic of mux8 is 
 
 begin
 
