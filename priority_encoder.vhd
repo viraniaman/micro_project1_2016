@@ -55,7 +55,7 @@ begin
 		a1 <= a1_temp;
 		
 		if(a1_temp = "000000000") then
-			sig <= '1';
+			sig <= '1';	
 		end if;
 		
 	end process;
