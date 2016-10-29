@@ -1,4 +1,5 @@
 v 3
+<<<<<<< HEAD
 file . "mux4.vhd" "20161028111411.000" "20161028164427.938":
   entity mux4 at 1( 0) + 0 on 1537;
   architecture basic of mux4 at 16( 288) + 0 on 1538;
@@ -29,6 +30,38 @@ file . "memory.vhd" "20161025105526.000" "20161028164427.839":
 file . "register16.vhd" "20161023083145.000" "20161028164428.158":
   entity register16 at 1( 0) + 0 on 1545;
   architecture basic of register16 at 14( 241) + 0 on 1546;
+=======
+file . "register16_testbench.vhd" "20161027022508.000" "20161027075513.306":
+  entity register16_testbench at 1( 0) + 0 on 1529;
+  architecture basic of register16_testbench at 11( 202) + 0 on 1530;
+file . "sign_extender.vhd" "20161028094442.000" "20161028152017.825":
+  entity sign_extender at 1( 0) + 0 on 1497;
+  architecture basic of sign_extender at 14( 230) + 0 on 1498;
+file . "priority_encoder_testbench.vhd" "20161025094724.000" "20161028152017.468":
+  entity priority_encoder_testbench at 1( 0) + 0 on 1485;
+  architecture basic of priority_encoder_testbench at 11( 208) + 0 on 1486;
+file . "alu_testbench.vhd" "20161027004734.000" "20161027072457.662":
+  entity alu_testbench at 1( 0) + 0 on 1499;
+  architecture basic of alu_testbench at 11( 195) + 0 on 1500;
+file . "register_file.vhd" "20161025100700.000" "20161028152017.705":
+  entity register_file at 1( 0) + 0 on 1493;
+  architecture basic of register_file at 19( 442) + 0 on 1494;
+file . "priority_encoder.vhd" "20161025095328.000" "20161028152017.541":
+  entity priority_encoder at 1( 0) + 0 on 1487;
+  architecture basic of priority_encoder at 15( 293) + 0 on 1488;
+file . "datapath.vhd" "20161023083051.000" "20161028152017.301":
+  entity datapath at 1( 0) + 0 on 1479;
+  architecture basic of datapath at 10( 138) + 0 on 1480;
+file . "alu.vhd" "20161027004734.000" "20161027072457.871":
+  entity alu at 1( 0) + 0 on 1501;
+  architecture basic of alu at 14( 288) + 0 on 1502;
+file . "memory.vhd" "20161025105526.000" "20161028152017.402":
+  entity memory at 1( 0) + 0 on 1483;
+  architecture basic of memory at 18( 352) + 0 on 1484;
+file . "register16.vhd" "20161027022058.000" "20161027075150.610":
+  entity register16 at 1( 0) + 0 on 1525;
+  architecture basic of register16 at 14( 241) + 0 on 1526;
+>>>>>>> 9c02ef66fa71f7a6b0fb0c2b198b747ee8570bd4
 file . "Testbench_main.vhd" "20160219084744.000" "20161020181330.645":
   entity testbench_main at 1( 0) + 0 on 293;
   architecture behave of testbench_main at 8( 114) + 0 on 294;

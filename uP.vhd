@@ -6,7 +6,8 @@ entity uP is
     port(
         opcode: in std_logic_vector(3 downto 0);
         clk,reset: in std_logic;
-        Z_out, C_out, done:out std_logic;
+        --Z_out, C_out:out signal; 
+		done:out std_logic;
 		Z,C : in std_logic;
 		PE_done : in std_logic;
 		)
@@ -15,21 +16,21 @@ end entity;
 architecture Behave of uP is
     type FsmState is (PC1, OP1, OP2, OP3, LHI1, OPI1, OPI2, LW1, LW2, LW3, LW4, SW3, BEQ1, BEQ2, BEQ3, JAL1, JLR2, LM1, LM2, LM3, SM2, SM3);
     signal Q : FsmState;
-	signal C_out1, Z_out1 : std_logic;
+	--signal C_out1, Z_out1 : std_logic;
     signal done1 : std_logic;
 begin
     
     process(Q,opcode,clk,reset)
         variable nQ: FsmState;
         variable done_var: std_logic;
-		variable Z_out_var : std_logic;
-		variable C_out_var : std_logic;
+		--variable Z_out_var : std_logic;
+		--variable C_out_var : std_logic;
     begin
         --defaults
         nQ := Q;
         done_var := done1;
-		Z_out_var := Z_out1;
-		C_out_var := C_out1;
+		--Z_out_var := Z_out1;
+		--C_out_var := C_out1;
         
         case Q is
             when PC1 =>
@@ -77,10 +78,10 @@ begin
                 nQ := LW2;
                 
             when LW2 =>
-			    if (opcode(3) = '1') then
+			    if (opcode(0) = '1') then
 					nQ := SW3;
 				end if;
-				if (opcode(3) = '0') then
+				if (opcode(0) = '0') then
 					nQ := LW3;
 				end if;
                 
@@ -108,10 +109,10 @@ begin
 				nQ := PC1;
 				
 			when JAL1 =>
-			    if (opcode(3) = '1') then
+			    if (opcode(0) = '1') then
 					nQ := JLR2;
 				end if;
-				if (opcode(3) = '0') then
+				if (opcode(0) = '0') then
 					nQ := BEQ3;
 				end if;
 				
@@ -119,10 +120,10 @@ begin
 				nQ := PC1;
 				
 			when LM1 =>
-			    if (opcode(3) = '1') then
+			    if (opcode(0) = '1') then
 					nQ := SM2;
 				end if;
-				if (opcode(3) = '0') then
+				if (opcode(0) = '0') then
 					nQ := LM2;
 				end if;
 				
@@ -132,8 +133,7 @@ begin
 			when LM3 =>
 			    if (PE_done_ = '0') then
 					nQ := LM2;
-				end if;
-				if (PE_done = '1') then
+				else --(PE_done = '1') 
 					nQ := PC1;
 				end if;
 				
@@ -144,22 +144,22 @@ begin
 			    if (PE_done = '0') then
 					nQ := SM2;
 				end if;
-				if (PE_done = '1') then 
+				else 
 					nQ := PC1;
 				end if;
                 
             when others => 
-                nQ := rst;
+                nQ := PC1;
             end case;
             
             if(clk'event and (clk = '1')) then
                 
                 done <= done1;
-				Z_out <= Z_out1;
-				C_out <= C_out1;
+				--Z_out <= Z_out1;
+				--C_out <= C_out1;
 				
                 if(reset1 = '1') then
-                    Q <= rst;
+                    Q <= PC1;
                 else
                     Q <= nQ;
                 end if;
@@ -167,4 +167,3 @@ begin
             end if;
     end process;
 end Behave;
-    
