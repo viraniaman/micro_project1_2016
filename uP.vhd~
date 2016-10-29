@@ -13,7 +13,7 @@ entity uP is
 		MEM_write,RF_write,IR_write,PC_write,MDR_write:out std_logic;
 		T1_write,T2_write,T3_write,T4_write,T5_write:out std_logic;
 		M1,M2,M4,M5,M6,M7,M8: out std_logic_vector(1 downto 0);
-		M3:out std_logic_vector(2 downto 0)
+		M3:out std_log
 		);
 end entity;
 
