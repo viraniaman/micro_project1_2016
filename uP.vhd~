@@ -1,25 +1,27 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-
+    
+    
 entity uP is
     port(
-        opcode: in std_logic_vector(3 downto 0);
-        clk,reset: in std_logic;
-        --Z_out, C_out:out signal; 
-		done:out std_logic;
+        	opcode: in std_logic_vector(3 downto 0);
+        	clk,reset: in std_logic;
+        	--Z_out, C_out:out signal; 
 		Z,C : in std_logic;
 		PE_done : in std_logic;
+		done:out std_logic;
 		MEM_write,RF_write,IR_write,PC_write,MDR_write:out std_logic;
 		T1_write,T2_write,T3_write,T4_write,T5_write:out std_logic;
 		M1,M2,M4,M5,M6,M7,M8: out std_logic_vector(1 downto 0);
-		M3:out std_log
+		M3:out std_logic_vector(2 downto 0);
+		current_state:out FsmState
 		);
 end entity;
 
 architecture Behave of uP is
 
-    type FsmState is (PC1, OP1, OP2, OP3, LHI1, OPI1, OPI2, LW1, LW2, LW3, LW4, 
+type FsmState is (PC1, OP1, OP2, OP3, LHI1, OPI1, OPI2, LW1, LW2, LW3, LW4, 
     		     SW3, BEQ1, BEQ2, BEQ3, JAL1, JLR2, LM1, LM2, LM3, SM2, SM3);
     
     signal Q : FsmState;
@@ -28,7 +30,9 @@ architecture Behave of uP is
 begin
     
     process(Q,opcode,clk,reset)
+    
         variable nQ: FsmState;
+        variable current_state1:FsmState; 
         variable done1,reset1: std_logic;
         variable MEM_write1,IR_write1,PC_write1,MDR_write1,RF_write1:std_logic;
         variable T1_write1,T2_write1,T3_write1,T4_write1,T5_write1:std_logic;
@@ -81,34 +85,34 @@ begin
                 	    T1_write1:='1';
                 	    T2_write1:='1';
                 	    M8a :="00";
-                
+			                    
             when OP2 =>
 			    nQ := OP3;
 			    M3a :="000";
 			    M4a :="10";
 			    T3_write1:='1';
-                
+			    
             when OP3 =>
 			    nQ := PC1;
 			    M5a :="00";
 			    RF_write1:='1';
-                
+			    
 	    when LHI1 =>
                 	    nQ := OP3;
                 	    M3a :="010";
                 	    T3_write1:='1';
-                
+                	    
             when OPI1 =>
 			    nQ := OPI2;
 			    M8a :="00";
 			    T1_write1:='1';
-                
+			    
             when OPI2 =>
 			    nQ := OP3;
 			    M3a :="000";
 			    M4a :="01";
 			    T3_write1:='1';
-				
+			    
 	    when LW1 =>
                 	    nQ := LW2;
                 	    T2_write1:='1';
@@ -242,7 +246,7 @@ begin
                 done <= done1;
 				--Z_out <= Z_out1;
 				--C_out <= C_out1;
-				
+		current_state<=Q;		
 		MEM_write<=MEM_write1;
 		RF_write<=RF_write1;
 		IR_write<=IR_write1;
