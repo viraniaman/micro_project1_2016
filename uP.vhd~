@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-    
+use work.types.all;    
     
 entity uP is
     port(
@@ -21,8 +21,8 @@ end entity;
 
 architecture Behave of uP is
 
-type FsmState is (PC1, OP1, OP2, OP3, LHI1, OPI1, OPI2, LW1, LW2, LW3, LW4, 
-    		     SW3, BEQ1, BEQ2, BEQ3, JAL1, JLR2, LM1, LM2, LM3, SM2, SM3);
+--type FsmState is (PC1, OP1, OP2, OP3, LHI1, OPI1, OPI2, LW1, LW2, LW3, LW4, 
+  --  		     SW3, BEQ1, BEQ2, BEQ3, JAL1, JLR2, LM1, LM2, LM3, SM2, SM3);
     
     signal Q : FsmState;
 	--signal C_out1, Z_out1 : std_logic;
