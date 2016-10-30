@@ -10,9 +10,14 @@ end entity;
 
 architecture basic of register16_testbench is
 
-component register16 is
-port(D: in std_logic_vector(15 downto 0);
-	  Q: out std_logic_vector(15 downto 0);
+component general_register is
+
+generic(
+    n: integer
+    );
+
+port(D: in std_logic_vector(n-1 downto 0);
+	  Q: out std_logic_vector(n-1 downto 0);
 	  clk: in std_logic;
 	  w: in std_logic);
 end component;
@@ -90,5 +95,5 @@ begin
 	
 	end process;
 	
-	module_register16: register16 port map(D,Q,clk,w);
+	module_register16: general_register generic map(16) port map(D,Q,clk,w);
 end basic;
