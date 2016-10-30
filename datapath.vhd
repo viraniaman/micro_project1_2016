@@ -8,9 +8,8 @@ entity datapath is
 port(
 	PCWrite, IRWrite, RFWrite, MDRWrite, T1Write, T2Write, T3Write, T4Write, T5Write, MemWrite, RegWrite,
 	Control_M6, Control_M7, Control_M8, clk: in std_logic;
-	A1, A2, A3, Control_M3, Control_M1: in std_logic_vector(2 downto 0);
-	ALUop, control_M2, control_M4, control_M5: in std_logic_vector(1 downto 0);
-	state: in fsm_state;
+	Control_M3: in std_logic_vector(2 downto 0);
+	ALUop, control_M2, control_M4, control_M5, Control_M1: in std_logic_vector(1 downto 0);
 	
 	opcode: out std_logic_vector(3 downto 0);
 	Z, C, PE_done: out std_logic
@@ -47,7 +46,7 @@ end component;
 component general_register is
 
 generic(
-	integer: n
+	n: integer
 	);
 
 port(D: in std_logic_vector(n-1 downto 0);
@@ -128,9 +127,8 @@ component memory IS
 	);
 END component;
 
-type FSM_state is ;
 
-signal m3_to_alu, m4_to_alu, alu_out, t3_out, t1_out, t2_out, t4_out, pc_out, se9_out, se6_out
+signal m3_to_alu, m4_to_alu, alu_out, t3_out, t1_out, t2_out, t4_out, pc_out, se9_out, se6_out,
 		 temp1, temp2, temp3, temp4, temp5, temp6, temp7, temp8, ir_out, mem_out, d1, d2, d3, mdr_out, pc_in,
 		 mem_data, mux7_to_t4, mux2_to_mem_addr: std_logic_vector(15 downto 0);
 signal imm9, ir_to_mux6, pe_next, m6_to_pe, t5_out: std_logic_vector(8 downto 0);
@@ -156,10 +154,10 @@ begin
 	T5: general_register generic map (8) port map (pe_next, t5_out, clk, T5Write);	
 	
 	MUX_1: mux4 generic map (16) port map (control_M1, alu_out, d2, t3_out, temp7, pc_in);
-	MUX_2: mux4 generic map (16) port map (control_M2, t3_out, pc_out, t4_out, temp5, mux2_to_mem_addr)
+	MUX_2: mux4 generic map (16) port map (control_M2, t3_out, pc_out, t4_out, temp5, mux2_to_mem_addr);
 	MUX_3: mux8 generic map (16) port map (control_M3, t1_out, pc_out, se9_out, se6_out, t4_out, temp1, temp2, temp3, m3_to_alu);
 	MUX_4: mux4 generic map (16) port map (control_M4, "0000000000000001", se6_out, t2_out, temp4, m4_to_alu);
-	MUX_5: mux2 generic map (16) port map(control_M5, t3_out, mdr_out, pc_out, temp8, d3);
+	MUX_5: mux4 generic map (16) port map(control_M5, t3_out, mdr_out, pc_out, temp8, d3);
 	MUX_6: mux2 generic map (8) port map(control_M6, ir_to_mux6, t5_out, m6_to_pe);
 	MUX_7: mux2 generic map (16) port map (control_M7, d1, t3_out, mux7_to_t4); 
 	MUX_8: mux2 generic map (3) port map(control_M8, ir_out(11 downto 9), pe_out, mux8_out);
