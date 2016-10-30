@@ -163,7 +163,6 @@ begin
 	MUX_4: mux4 generic map (16) port map (control_M4, "0000000000000001", se6_out, t2_out, temp4, m4_to_alu);
 	MUX_5: mux2 generic map (16) port map(control_M5, t3_out, mdr_out, d3);
 	MUX_6: mux2 generic map (8) port map(control_M6, ir_to_mux6, t5_out, m6_to_pe);
-	MUX_7: 
 	MUX_8: mux2 generic map (3) port map(control_M8, ir_out(11 downto 9), pe_out, mux8_out);
 	
 	SE9: sign_extender generic map (9) port map (imm9, se9_out);	
