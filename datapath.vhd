@@ -174,7 +174,7 @@ begin
 	a3 <= pe_out when (ir_out(15 downto 12)="0110") else
 			ir_out(5 downto 3) when (ir_out(15 downto 12)="0000" or ir_out(15 downto 12)="0010") else
 			ir_out(8 downto 6) when (ir_out(15 downto 12)="0001") else
-			ir_out(11 downto 9) when (ir_out(15 downto 12)="0011");
+			ir_out(11 downto 9) when (ir_out(15 downto 12)="0011" or ir_out(15 downto 12)="0100" or ir_out(15 downto 12)="1000");
 			
 	
 	reg_file: register_file port map(a1, a2, a3, d3, RegWrite, clk, d1, d2);
