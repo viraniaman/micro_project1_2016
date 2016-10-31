@@ -1,10 +1,16 @@
 v 3
+<<<<<<< HEAD
 file . "microprocessor.vhd" "20161031092815.000" "20161031145820.027":
   entity microprocessor at 1( 0) + 0 on 155;
   architecture basic of microprocessor at 12( 163) + 0 on 156;
 file . "uP.vhd" "20161031080359.000" "20161031133408.958":
   entity up at 1( 0) + 0 on 153;
   architecture behave of up at 28( 612) + 0 on 154;
+=======
+file . "uP.vhd" "20161031080358.000" "20161031143905.492":
+  entity up at 1( 0) + 0 on 170;
+  architecture behave of up at 28( 612) + 0 on 171;
+>>>>>>> 68b87b1badcac436e74be53604c77bacf25350bc
 file . "sign_extender.vhd" "20161028094442.000" "20161031011444.961":
   entity sign_extender at 1( 0) + 0 on 144;
   architecture basic of sign_extender at 14( 230) + 0 on 145;
@@ -23,21 +29,21 @@ file . "mux8.vhd" "20161029101854.000" "20161031011444.690":
 file . "mux2.vhd" "20161029101758.000" "20161031011444.638":
   entity mux2 at 1( 0) + 0 on 126;
   architecture basic of mux2 at 20( 285) + 0 on 127;
-file . "alu.vhd" "20161020131715.000" "20161031011444.398":
-  entity alu at 1( 0) + 0 on 118;
-  architecture basic of alu at 14( 288) + 0 on 119;
-file . "alu_testbench.vhd" "20161020130110.000" "20161031011444.359":
-  entity alu_testbench at 1( 0) + 0 on 116;
-  architecture basic of alu_testbench at 11( 195) + 0 on 117;
-file . "general_register.vhd" "20161030192509.000" "20161031011444.576":
-  entity general_register at 1( 0) + 0 on 122;
-  architecture basic of general_register at 18( 275) + 0 on 123;
+file . "alu.vhd" "20161020131714.000" "20161031143601.486":
+  entity alu at 1( 0) + 0 on 163;
+  architecture basic of alu at 14( 288) + 0 on 164;
+file . "alu_testbench.vhd" "20161020130110.000" "20161031143601.433":
+  entity alu_testbench at 1( 0) + 0 on 161;
+  architecture basic of alu_testbench at 11( 195) + 0 on 162;
+file . "general_register.vhd" "20161030192508.000" "20161031143601.651":
+  entity general_register at 1( 0) + 0 on 167;
+  architecture basic of general_register at 18( 275) + 0 on 168;
 file . "mux4.vhd" "20161029101825.000" "20161031011444.661":
   entity mux4 at 1( 0) + 0 on 128;
   architecture basic of mux4 at 20( 316) + 0 on 129;
-file . "datapath.vhd" "20161030193842.000" "20161031011444.432":
-  entity datapath at 1( 0) + 0 on 120;
-  architecture basic of datapath at 20( 518) + 0 on 121;
+file . "datapath.vhd" "20161031081926.000" "20161031143601.516":
+  entity datapath at 1( 0) + 0 on 165;
+  architecture basic of datapath at 20( 518) + 0 on 166;
 file . "priority_encoder.vhd" "20161029120834.000" "20161031011444.772":
   entity priority_encoder at 1( 0) + 0 on 134;
   architecture basic of priority_encoder at 15( 293) + 0 on 135;
@@ -47,8 +53,8 @@ file . "register_file_testbench.vhd" "20161025070401.000" "20161031011444.839":
 file . "sign_extender_testbench.vhd" "20161028095013.000" "20161031011444.927":
   entity sign_extender_testbench at 1( 0) + 0 on 142;
   architecture basic of sign_extender_testbench at 11( 205) + 0 on 143;
-file . "types.vhd" "20161030081637.000" "20161031011444.988":
-  package types at 1( 0) + 0 on 146;
+file . "types.vhd" "20161030081636.000" "20161031143900.050":
+  package types at 1( 0) + 0 on 169;
 file . "memory_testbench.vhd" "20161025103552.000" "20161031011444.598":
   entity memory_testbench at 1( 0) + 0 on 124;
   architecture basic of memory_testbench at 11( 198) + 0 on 125;

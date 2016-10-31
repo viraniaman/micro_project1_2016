@@ -5,6 +5,7 @@ use work.types.all;
 
 entity microprocessor is
 
+<<<<<<< HEAD
 port(clk, reset: in std_logic);
  
 end entity;
@@ -70,3 +71,8 @@ begin
 											opcode, Z, C, PE_done, IR);
 
 end basic;
+=======
+port ()
+
+end entity;
+>>>>>>> 68b87b1badcac436e74be53604c77bacf25350bc
