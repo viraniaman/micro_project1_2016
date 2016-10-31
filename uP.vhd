@@ -13,7 +13,7 @@ port(
 	--Z_out, C_out:out signal; 
 	Z,C : in std_logic;
 	PE_done : in std_logic;
-	done:out std_logic;
+--	done:out std_logic;
 	MEM_write,RF_write,IR_write,PC_write,MDR_write:out std_logic;
 	T1_write,T2_write,T3_write,T4_write,T5_write:out std_logic;
 	M1,M2,M4,M5: out std_logic_vector(1 downto 0);
@@ -34,7 +34,7 @@ begin
 process(clk)
 
 	variable nQ: FsmState;
-	variable done1,reset1: std_logic;
+	variable reset1: std_logic;
 	variable MEM_write1,IR_write1,PC_write1,MDR_write1,RF_write1:std_logic;
 	variable T1_write1,T2_write1,T3_write1,T4_write1,T5_write1:std_logic;
 	variable M1a,M2a,M4a,M5a:std_logic_vector(1 downto 0); 
@@ -293,7 +293,7 @@ begin
 			nQ := LM2;
 		elsif(PE_done = '1') then
 			nQ := PC1;
-			done1:='1';
+--			done1:='1';
 		end if;
 
 	when SM2 =>
@@ -318,7 +318,7 @@ begin
 			nQ := SM2;
 		elsif (PE_done = '1') then
 			nQ := PC1;
-			done1:='1';
+--			done1:='1';
 		end if;
 
 	when others => 
@@ -365,7 +365,7 @@ begin
 		M7 <= M7a;
 		M8 <= M8a;
 		aluop <= aluop1;
-		done <= done1;
+--		done <= done1;
 		
 		if(reset1 = '1') then
 			Q <= PC1;

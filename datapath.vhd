@@ -12,7 +12,8 @@ port(
 	ALUop, control_M2, control_M4, control_M5, Control_M1: in std_logic_vector(1 downto 0);
 	
 	opcode: out std_logic_vector(3 downto 0);
-	Z, C, PE_done: out std_logic
+	Z, C, PE_done: out std_logic;
+	IR: out std_LOGIC_VECTOR(15 downto 0)
 	);
 
 end entity;
@@ -144,7 +145,8 @@ begin
 	ir_to_mux6 <= ir_out(8 downto 0);
 	mem_data <= t1_out;
 	mem_addr <= mux2_to_mem_addr(6 downto 0);
-
+	IR <= ir_out;
+	
 	alu_block: alu port map (ALUop, m3_to_alu, m4_to_alu, c_reg, z_reg, alu_out);
 	
 	T1: general_register generic map (16) port map (d1, t1_out, clk, T1Write);
