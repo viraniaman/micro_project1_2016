@@ -10,9 +10,14 @@ end entity;
 
 architecture basic of register16_testbench is
 
-component register16 is
-port(D: in std_logic_vector(15 downto 0);
-	  Q: out std_logic_vector(15 downto 0);
+component general_register is
+
+generic(
+    n: integer
+    );
+
+port(D: in std_logic_vector(n-1 downto 0);
+	  Q: out std_logic_vector(n-1 downto 0);
 	  clk: in std_logic;
 	  w: in std_logic);
 end component;
@@ -64,6 +69,7 @@ begin
 			--wait for 1 ns;
 			--wait until rising_edge(clk);
 			wait until rising_edge(clk);
+			wait for 1 ns;
 			
 			if(Q /= to_stdlogicvector(Q1)) then
 				write(out_line, string'("D found error at line "));
